@@ -13634,23 +13634,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\choiw\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\chesd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\choiw\\Desktop\\talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj",
+      "projectUniqueName": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Services.Profile\\Talent.Services.Profile.csproj",
       "projectName": "Talent.Services.Profile",
-      "projectPath": "C:\\Users\\choiw\\Desktop\\talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj",
-      "packagesPath": "C:\\Users\\choiw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\choiw\\Desktop\\talent-competition\\Talent.Services.Profile\\obj\\",
+      "projectPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Services.Profile\\Talent.Services.Profile.csproj",
+      "packagesPath": "C:\\Users\\chesd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Services.Profile\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\choiw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chesd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13663,8 +13659,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\choiw\\Desktop\\talent-competition\\Talent.Common\\Talent.Common.csproj": {
-              "projectPath": "C:\\Users\\choiw\\Desktop\\talent-competition\\Talent.Common\\Talent.Common.csproj"
+            "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj": {
+              "projectPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj"
             }
           }
         }
@@ -13719,7 +13715,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
