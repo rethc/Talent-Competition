@@ -6,6 +6,7 @@ import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
 import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Header } from 'semantic-ui-react';
+import axios from 'axios';
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -29,7 +30,9 @@ export default class ManageJob extends React.Component {
                 showUnexpired: true
             },
             totalPages: 1,
-            activeIndex: ""
+            activeIndex: "",
+            jobsFound: true
+
         }
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
@@ -43,11 +46,11 @@ export default class ManageJob extends React.Component {
         this.setState({ loaderData });//comment this
 
         //set loaderData.isLoading to false after getting data
-        //this.loadData(() =>
-        //    this.setState({ loaderData })
-        //)
+        this.loadData(() =>
+            this.setState({ loaderData })
+        )
 
-        //console.log(this.state.loaderData)
+        console.log(this.state.loaderData)
     }
 
     componentDidMount() {
@@ -58,6 +61,8 @@ export default class ManageJob extends React.Component {
         var link = 'http://localhost:51689/listing/listing/getSortedEmployerJobs';
         var cookies = Cookies.get('talentAuthToken');
         // your ajax call and other logic goes here
+
+
     }
 
     loadNewData(data) {
@@ -80,6 +85,24 @@ export default class ManageJob extends React.Component {
                 <section className="page-body">
                     <div className="ui container">
                         <Header as='h1'>List of Jobs</Header>
+
+                            <Icon name='filter' />Filter:&nbsp;
+                             <Dropdown text='Choose filter'>
+                                <Dropdown.Menu>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        &nbsp;
+                        <Icon name='calendar alternate outline' />Sort by date:&nbsp;
+                             <Dropdown text='Newest first'>
+                                <Dropdown.Menu>
+                                </Dropdown.Menu>
+                            </Dropdown>
+
+                        <Segment basic>{this.state.jobsFound ? 'Jobs found' : 'No Jobs Found'}</Segment>
+
+                        <Pagination
+                            totalPages={1}
+                        />
                     </div>
                 </section>
             </BodyWrapper>
