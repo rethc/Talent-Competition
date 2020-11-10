@@ -5,7 +5,7 @@ import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment } from 'semantic-ui-react';
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Header } from 'semantic-ui-react';
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -46,7 +46,7 @@ export default class ManageJob extends React.Component {
         //this.loadData(() =>
         //    this.setState({ loaderData })
         //)
-        
+
         //console.log(this.state.loaderData)
     }
 
@@ -57,7 +57,7 @@ export default class ManageJob extends React.Component {
     loadData(callback) {
         var link = 'http://localhost:51689/listing/listing/getSortedEmployerJobs';
         var cookies = Cookies.get('talentAuthToken');
-       // your ajax call and other logic goes here
+        // your ajax call and other logic goes here
     }
 
     loadNewData(data) {
@@ -77,7 +77,11 @@ export default class ManageJob extends React.Component {
     render() {
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
-               <div className ="ui container">Your table goes here</div>
+                <section className="page-body">
+                    <div className="ui container">
+                        <Header as='h1'>List of Jobs</Header>
+                    </div>
+                </section>
             </BodyWrapper>
         )
     }
