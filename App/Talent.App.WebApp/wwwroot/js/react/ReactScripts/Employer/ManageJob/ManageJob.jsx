@@ -5,8 +5,38 @@ import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Header } from 'semantic-ui-react';
-import axios from 'axios';
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Header, Card } from 'semantic-ui-react';
+
+const filterOptions = [
+    {
+        key: 'Active',
+        text: 'Active',
+        value: 'Active'
+    },
+    {
+        key: 'Closed',
+        text: 'Closed',
+        value: 'Closed'
+    },
+    {
+        key: 'Draft',
+        text: 'Draft',
+        value: 'Draft'
+    },
+    {
+        key: 'Expired',
+        text: 'Expired',
+        value: 'Expired'
+    },
+    {
+        key: 'Unexpired',
+        text: 'Unexpired',
+        value: 'Unexpired'
+    }
+];
+
+
+
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -37,7 +67,10 @@ export default class ManageJob extends React.Component {
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
         this.loadNewData = this.loadNewData.bind(this);
+
         //your functions go here
+        this.renderJobs = this.renderJobs.bind(this);
+        this.renderNoJobs = this.renderNoJobs.bind(this);
     };
 
     init() {
@@ -48,9 +81,9 @@ export default class ManageJob extends React.Component {
         //set loaderData.isLoading to false after getting data
         this.loadData(() =>
             this.setState({ loaderData })
-        )
+        );
 
-        console.log(this.state.loaderData)
+        //console.log(this.state.loaderData)
     }
 
     componentDidMount() {
@@ -62,7 +95,30 @@ export default class ManageJob extends React.Component {
         var cookies = Cookies.get('talentAuthToken');
         // your ajax call and other logic goes here
 
-
+        $.ajax({
+            url: link,
+            headers: {
+                'Authorization': 'Bearer ' + cookies,
+                'Content-Type': 'application/json'
+            },
+            data: {
+                activePage: this.state.activePage,
+                sortbyDate: this.state.sortBy.date,
+                showActive: this.state.filter.showActive,
+                showClosed: this.state.filter.showClosed,
+                showDraft: this.state.filter.showDraft,
+                showExpired: this.state.filter.showExpired,
+                showUnexpired: this.state.filter.showUnexpired,
+            },
+            type: "GET",
+            success: function (res) {
+                console.log("Jobs: ", res);
+                this.setState({ loadJobs: res.myJobs })
+            }.bind(this),
+            error: function (res) {
+                console.log(res.status);
+            }
+        })
     }
 
     loadNewData(data) {
@@ -79,26 +135,37 @@ export default class ManageJob extends React.Component {
         });
     }
 
+    renderNoJobs() {
+        return <Segment basic>No Jobs Found</Segment>
+    }
+
+    renderJobs() {
+        return (<Segment basic>
+            <Card.Group>
+                {this.state.loadJobs.map(job => <JobSummaryCard key={job.id} job={job} />)}
+            </Card.Group>
+        </Segment>)
+    }
+
+
     render() {
+
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
                 <section className="page-body">
                     <div className="ui container">
                         <Header as='h1'>List of Jobs</Header>
-
-                            <Icon name='filter' />Filter:&nbsp;
-                             <Dropdown text='Choose filter'>
-                                <Dropdown.Menu>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        &nbsp;
-                        <Icon name='calendar alternate outline' />Sort by date:&nbsp;
+                        <Icon name='filter' />Filter:
+                        <Dropdown
+                            text='Choose filter'
+                            options={filterOptions}
+                        />
+                        <Icon name='calendar alternate outline' />Sort by date:
                              <Dropdown text='Newest first'>
-                                <Dropdown.Menu>
-                                </Dropdown.Menu>
-                            </Dropdown>
-
-                        <Segment basic>{this.state.jobsFound ? 'Jobs found' : 'No Jobs Found'}</Segment>
+                            <Dropdown.Menu>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        {this.state.jobsFound ? this.renderJobs() : this.renderNoJobs()}
 
                         <Pagination
                             totalPages={1}
