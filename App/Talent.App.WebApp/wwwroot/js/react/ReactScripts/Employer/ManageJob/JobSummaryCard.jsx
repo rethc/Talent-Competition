@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import Cookies from 'js-cookie';
-import { Popup, Card, Icon, Label, Button } from 'semantic-ui-react';
+import { Popup, Card, Icon, Label, Button, Segment } from 'semantic-ui-react';
 import moment from 'moment';
 
 export class JobSummaryCard extends React.Component {

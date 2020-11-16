@@ -7,37 +7,6 @@ import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
 import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Header, Card } from 'semantic-ui-react';
 
-const filterOptions = [
-    {
-        key: 'Active',
-        text: 'Active',
-        value: 'Active'
-    },
-    {
-        key: 'Closed',
-        text: 'Closed',
-        value: 'Closed'
-    },
-    {
-        key: 'Draft',
-        text: 'Draft',
-        value: 'Draft'
-    },
-    {
-        key: 'Expired',
-        text: 'Expired',
-        value: 'Expired'
-    },
-    {
-        key: 'Unexpired',
-        text: 'Unexpired',
-        value: 'Unexpired'
-    }
-];
-
-
-
-
 export default class ManageJob extends React.Component {
     constructor(props) {
         super(props);
@@ -141,7 +110,7 @@ export default class ManageJob extends React.Component {
 
     renderJobs() {
         return (<Segment basic>
-            <Card.Group>
+            <Card.Group itemsPerRow='3'>
                 {this.state.loadJobs.map(job => <JobSummaryCard key={job.id} job={job} />)}
             </Card.Group>
         </Segment>)
@@ -149,27 +118,62 @@ export default class ManageJob extends React.Component {
 
 
     render() {
+        const filterOptions = [
+            {
+                key: 'Active',
+                text: 'Active',
+                value: 'Active'
+            },
+            {
+                key: 'Closed',
+                text: 'Closed',
+                value: 'Closed'
+            },
+            {
+                key: 'Draft',
+                text: 'Draft',
+                value: 'Draft'
+            },
+            {
+                key: 'Expired',
+                text: 'Expired',
+                value: 'Expired'
+            },
+            {
+                key: 'Unexpired',
+                text: 'Unexpired',
+                value: 'Unexpired'
+            }
+        ];
 
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
                 <section className="page-body">
                     <div className="ui container">
                         <Header as='h1'>List of Jobs</Header>
+
                         <Icon name='filter' />Filter:
                         <Dropdown
                             text='Choose filter'
+                            inline
                             options={filterOptions}
                         />
                         <Icon name='calendar alternate outline' />Sort by date:
-                             <Dropdown text='Newest first'>
-                            <Dropdown.Menu>
-                            </Dropdown.Menu>
+                        <Dropdown
+                            text='Newest first'
+                            inline
+                        >
                         </Dropdown>
+
+
                         {this.state.jobsFound ? this.renderJobs() : this.renderNoJobs()}
 
-                        <Pagination
-                            totalPages={1}
-                        />
+                        <Segment basic textAlign='center'>
+                            <Pagination
+                                defaultActivePage={1}
+                                totalPages={1}
+                            />
+                        </Segment>
                     </div>
                 </section>
             </BodyWrapper>
