@@ -13685,6 +13685,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
+          "targetAlias": "netcoreapp2.0",
           "projectReferences": {
             "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj": {
               "projectPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj"
@@ -13703,6 +13704,7 @@
     },
     "frameworks": {
       "netcoreapp2.0": {
+        "targetAlias": "netcoreapp2.0",
         "dependencies": {
           "Microsoft.AspNetCore.All": {
             "target": "Package",
@@ -13745,7 +13747,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

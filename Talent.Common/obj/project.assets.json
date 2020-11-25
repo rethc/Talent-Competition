@@ -10664,11 +10664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj",
+      "projectUniqueName": "C:\\Users\\chesd\\source\\repos\\Internship2\\Talent.Common\\Talent.Common.csproj",
       "projectName": "Talent.Common",
-      "projectPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\Talent.Common.csproj",
+      "projectPath": "C:\\Users\\chesd\\source\\repos\\Internship2\\Talent.Common\\Talent.Common.csproj",
       "packagesPath": "C:\\Users\\chesd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chesd\\Source\\Repos\\Internship2\\Talent.Common\\obj\\",
+      "outputPath": "C:\\Users\\chesd\\source\\repos\\Internship2\\Talent.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chesd\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10683,6 +10683,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
+          "targetAlias": "netcoreapp2.0",
           "projectReferences": {}
         }
       },
@@ -10694,6 +10695,7 @@
     },
     "frameworks": {
       "netcoreapp2.0": {
+        "targetAlias": "netcoreapp2.0",
         "dependencies": {
           "AWSSDK.Core": {
             "target": "Package",
@@ -10772,7 +10774,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

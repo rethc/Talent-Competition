@@ -41,7 +41,6 @@ C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcor
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\appsettings.docker.Development.json
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\appsettings.docker.json
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\appsettings.json
-C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\Talent.Services.Profile.deps.json
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\Talent.Services.Profile.runtimeconfig.json
 C:\Users\chesd\Source\Repos\Internship2\Talent.Services.Profile\bin\Debug\netcoreapp2.0\Talent.Services.Profile.runtimeconfig.dev.json
