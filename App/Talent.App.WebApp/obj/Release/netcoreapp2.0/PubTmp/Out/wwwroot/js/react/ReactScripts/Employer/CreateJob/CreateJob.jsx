@@ -18,31 +18,31 @@ export default class CreateJob extends React.Component {
         super(props);
         this.state = {
             jobData: {
-                id:"",
-                employerID:"",
+                id: "",
+                employerID: "",
                 title: "",
                 description: "",
                 summary: "",
                 applicantDetails: {
                     yearsOfExperience: { years: 1, months: 1 },
                     qualifications: [],
-                    visaStatus:[]
+                    visaStatus: []
                 },
                 jobDetails: {
                     categories: { category: "", subCategory: "" },
                     jobType: [],
                     startDate: moment(),
                     salary: { from: 0, to: 0 },
-                    location: { country: "", city: ""}
+                    location: { country: "", city: "" }
                 }
             },
             loaderData: loaderData
         }
-        
+
         this.updateStateData = this.updateStateData.bind(this);
         this.addUpdateJob = this.addUpdateJob.bind(this);
-        this.loadData = this.loadData.bind(this); 
-   
+        this.loadData = this.loadData.bind(this);
+
         this.init = this.init.bind(this);
     };
 
@@ -66,8 +66,8 @@ export default class CreateJob extends React.Component {
         var copyJobParam = this.props.match.params.copyId ? this.props.match.params.copyId : "";
 
         if (param != "" || copyJobParam != "") {
-            var link = param != "" ? 'http://localhost:51689/listing/listing/GetJobByToEdit?id=' + param
-                : 'http://localhost:51689/listing/listing/GetJobForCopy?id=' + copyJobParam;
+            var link = param != "" ? 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/GetJobByToEdit?id=' + param
+                : 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/GetJobForCopy?id=' + copyJobParam;
             var cookies = Cookies.get('talentAuthToken');
             $.ajax({
                 url: link,
@@ -84,39 +84,39 @@ export default class CreateJob extends React.Component {
                         res.jobData.jobDetails.endDate = res.jobData.jobDetails.endDate ? moment(res.jobData.jobDetails.endDate) : null;
                         res.jobData.expiryDate = res.jobData.expiryDate
                             ? moment(res.jobData.expiryDate) > moment()
-                                ? moment(res.jobData.expiryDate) : moment().add(14,'days') : null;
+                                ? moment(res.jobData.expiryDate) : moment().add(14, 'days') : null;
                         this.setState({ jobData: res.jobData })
                     } else {
                         TalentUtil.notification.show(res.message, "error", null, null)
                     }
                 }.bind(this)
             })
-        }       
+        }
     }
     addUpdateJob() {
         var jobData = this.state.jobData;
         console.log("data to save:", jobData);
         //jobData.jobDetails.startDate = jobData.jobDetails.startDate.toDate();
         console.log("date:", jobData.jobDetails.startDate);
-        var cookies = Cookies.get('talentAuthToken');   
+        var cookies = Cookies.get('talentAuthToken');
         $.ajax({
-            url: 'http://localhost:51689/listing/listing/createUpdateJob',
+            url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/createUpdateJob',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
             },
-            dataType:'json',
+            dataType: 'json',
             type: "post",
             data: JSON.stringify(jobData),
             success: function (res) {
                 if (res.success == true) {
                     TalentUtil.notification.show(res.message, "success", null, null);
                     window.location = "/ManageJobs";
-                   
+
                 } else {
                     TalentUtil.notification.show(res.message, "error", null, null)
                 }
-                
+
             }.bind(this)
         })
     }
@@ -125,11 +125,11 @@ export default class CreateJob extends React.Component {
         const data = Object.assign({}, this.state.jobData)
         data[event.target.name] = event.target.value
         this.setState({
-            jobData:data
+            jobData: data
         })
         console.log(data);
     }
-   
+
     render() {
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>

@@ -52,7 +52,8 @@ export default class UserAccountSetting extends React.Component {
         const cookies = Cookies.get('talentAuthToken');
         if (field == "name") {
             $.ajax({
-                url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/changeUserName?userName=' + this.state.userName,
+                url: '
+                authentication/ authentication / changeUserName ? userName = ' + this.state.userName,
                 type: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + cookies,

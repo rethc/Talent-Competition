@@ -12,18 +12,18 @@ import VideoUpload from '../../Profile/VideoUpload.jsx'
 class ClientProfileModal extends React.Component {
     constructor(props) {
         super(props);
-        
 
-        
+
+
     }
-    
-   
+
+
 
     loadData(id) {
         if (id != undefined) {
             var cookies = Cookies.get('talentAuthToken');
             $.ajax({
-                url: 'http://localhost:60290/profile/profile/getEmployerProfile?id=' + id + '&role=' + 'employer',
+                url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getEmployerProfile?id=' + id + '&role=' + 'employer',
                 headers: {
                     'Authorization': 'Bearer ' + cookies,
                     'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ class ClientProfileModal extends React.Component {
                 success: function (res) {
                     let employerData = null;
                     if (res.employer) {
-                        employerData = res.employer                        
+                        employerData = res.employer
                     }
                     this.updateWithoutSave(employerData)
                 }.bind(this),
@@ -46,12 +46,12 @@ class ClientProfileModal extends React.Component {
     }
 
 
-    
+
 
     saveData() {
         var cookies = Cookies.get('talentAuthToken');
         $.ajax({
-            url: 'http://localhost:60290/profile/profile/saveClientProfile',
+            url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/saveClientProfile',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -74,11 +74,11 @@ class ClientProfileModal extends React.Component {
         })
     }
 
-  
+
 
     render() {
 
-      
+
     }
 }
 

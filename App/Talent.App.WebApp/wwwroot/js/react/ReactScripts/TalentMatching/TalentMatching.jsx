@@ -81,27 +81,27 @@ export default class TalentMatching extends React.Component {
     //        });
     //}
 
-    //loadJobs(data) { // url: 'http://localhost:51689/listing/listing/getEmployerJobs',
-        
-    //loadSelectedJob(data) url: 'http://localhost:51689/listing/listing/getJobForTalentMatching',
+    //loadJobs(data) { // url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getEmployerJobs',
 
-    //loadTalentList()  url: 'http://localhost:60290/profile/profile/getTalentList',
+    //loadSelectedJob(data) url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getJobForTalentMatching',
 
-    //loadTalentFilterList() //url: 'http://localhost:60290/profile/profile/getTalentListFilter',
+    //loadTalentList()  url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getTalentList',
 
-    //loadEmployerFilterList() //url: 'http://localhost:60290/profile/profile/getEmployerListFilter',
+    //loadTalentFilterList() //url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getTalentListFilter',
+
+    //loadEmployerFilterList() //url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getEmployerListFilter',
 
 
-    // loadEmployerList() // url: 'http://localhost:60290/profile/profile/getEmployerList',
-    //loadSuggestionList   url: 'http://localhost:60290/profile/profile/getSuggestionList',
+    // loadEmployerList() // url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getEmployerList',
+    //loadSuggestionList   url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getSuggestionList',
 
-   // saveCompanyTalents()   url: 'http://localhost:60290/profile/profile/addTalentSuggestions',
-     
+    // saveCompanyTalents()   url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/addTalentSuggestions',
 
-    //saveJobTalents()    url: 'http://localhost:60290/profile/profile/addTalentSuggestions',
-       
 
-    
-       
-    
+    //saveJobTalents()    url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/addTalentSuggestions',
+
+
+
+
+
 }

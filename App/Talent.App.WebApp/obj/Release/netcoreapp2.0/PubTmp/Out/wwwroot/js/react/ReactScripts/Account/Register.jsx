@@ -47,7 +47,7 @@ export default class Register extends React.Component {
         };
 
         $.ajax({
-            url: 'http://localhost:60998/authentication/authentication/signup',
+            url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/signup',
             type: 'POST',
             data: JSON.stringify(registerModel),
             contentType: 'application/json',
@@ -148,16 +148,16 @@ export default class Register extends React.Component {
             <form className={`ui large form ${this.isLoadingChange()}`}>
                 {
                     this.state.userRole == "talent" ? null :
-                    <SingleInput
-                        title="Company name"
-                        inputType="text"
-                        placeholder="Company name"
-                        name="companyName"
-                        isError={this.errorClass(this.state.formErrors.companyName)}
-                        errorMessage="Please enter company name"
-                        content={this.state.companyName}
-                        controlFunc={this.handleUserInput}
-                    />
+                        <SingleInput
+                            title="Company name"
+                            inputType="text"
+                            placeholder="Company name"
+                            name="companyName"
+                            isError={this.errorClass(this.state.formErrors.companyName)}
+                            errorMessage="Please enter company name"
+                            content={this.state.companyName}
+                            controlFunc={this.handleUserInput}
+                        />
                 }
                 <SingleInput
                     title="First name"
@@ -226,7 +226,7 @@ export default class Register extends React.Component {
                     >I agree to the <a href="/Home/TOC" target="_blank">terms and conditions</a></CheckBox>
                 </div>
                 <div className="field">
-                    <div className={`fluid ui ${this.state.formValid ? '': 'disabled'} teal button`} onClick={this.register} id="submit-btn">Join</div>
+                    <div className={`fluid ui ${this.state.formValid ? '' : 'disabled'} teal button`} onClick={this.register} id="submit-btn">Join</div>
                 </div>
             </form>
         )

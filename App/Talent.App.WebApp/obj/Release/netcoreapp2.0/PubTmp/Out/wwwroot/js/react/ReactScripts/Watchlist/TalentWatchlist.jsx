@@ -15,16 +15,16 @@ export default class TalentWatchlist extends React.Component {
         //    loaderData: loader
         //}
 
-    }   
+    }
 
-    //loadWatchlist()   url: 'http://localhost:51689/listing/listing/getWatchlist',
- 
+    //loadWatchlist()   url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getWatchlist',
+
     render() {
-       
-      
+
+
         //return (
         //    <BodyWrapper reload={this.init} loaderData={this.state.loaderData} >
-             
+
         //    </BodyWrapper>
         //)
     }

@@ -17,7 +17,7 @@ export default class AdaptiveBanner extends React.Component {
 
         this.state = {
             username: '',
-            userRole:'',
+            userRole: '',
             loggedIn: false
         }
 
@@ -29,7 +29,7 @@ export default class AdaptiveBanner extends React.Component {
     componentDidMount() {
         this.isUserAuthenticated()
     }
-      
+
     reload() {
         this.isUserAuthenticated()
     }
@@ -41,7 +41,7 @@ export default class AdaptiveBanner extends React.Component {
     isUserAuthenticated() {
         var cookies = Cookies.get('talentAuthToken')
         $.ajax({
-            url: 'http://localhost:60290/profile/profile/isUserAuthenticated',
+            url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/isUserAuthenticated',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ export default class AdaptiveBanner extends React.Component {
                     this.setState({
                         username: res.username,
                         loggedIn: true,
-                        userRole:res.type
+                        userRole: res.type
                     })
                 }
                 else {

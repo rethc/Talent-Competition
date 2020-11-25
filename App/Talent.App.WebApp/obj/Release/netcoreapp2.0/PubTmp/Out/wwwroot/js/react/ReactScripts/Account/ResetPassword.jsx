@@ -31,7 +31,7 @@ export default class ResetPassword extends React.Component {
         this.queryString();
     }
 
-    queryString() {    
+    queryString() {
         this.setState({
             email: this.props.match.params.o,
             token: this.props.match.params.p
@@ -42,7 +42,7 @@ export default class ResetPassword extends React.Component {
             Email: email,
             Token: token
         }
-        let url = `http://localhost:60998/authentication/authentication/verifyResetPasswordToken?o=${email}&p=${token}`;
+        let url = `https://reth-talentidentity.azurewebsites.net/authentication/authentication/verifyResetPasswordToken?o=${email}&p=${token}`;
         $.ajax({
             url: url,
             type: 'POST',
@@ -130,7 +130,7 @@ export default class ResetPassword extends React.Component {
         let newPassword = this.state.newPassword;
         let email = this.state.email;
         let token = this.state.token;
-        let resetUrl = `http://localhost:60998/authentication/authentication/resetpassword?o=${email}&p=${token}`;
+        let resetUrl = `https://reth-talentidentity.azurewebsites.net/authentication/authentication/resetpassword?o=${email}&p=${token}`;
 
         $.ajax({
             url: resetUrl,
@@ -179,51 +179,51 @@ export default class ResetPassword extends React.Component {
                 {
                     this.state.tokenValid == null ?
                         <Loader active inline='centered' content='' />
-                    :
-                    this.state.tokenValid == false ?
-                        <div>
-                            <h3> Looks like this reset password link is expired. Please go back to the main site to request another link.</h3>
-                            <h3> <a href="/Home"> Click here to be redirected back to the main site </a> </h3>
-                            <br />
-                        </div>
                         :
-                        !this.state.isResetSuccess ?
-                            <form className={`ui large form ${this.isLoadingChange()}`}>
-                                <div>
-                                    <SingleInput
-                                        title="New Password"
-                                        inputType="password"
-                                        placeholder="New Password"
-                                        name="newPassword"
-                                        isError={this.errorClass(this.state.formErrors.newPassword)}
-                                        errorMessage={this.state.formErrors.newPassword}
-                                        content={this.state.newPassword}
-                                        controlFunc={this.handleUserInput}
-                                    />
-                                    <SingleInput
-                                        title="Confirm Password"
-                                        inputType="password"
-                                        placeholder="Confirm Password"
-                                        name="confirmPassword"
-                                        isError={this.errorClass(this.state.formErrors.confirmPassword)}
-                                        errorMessage={this.state.formErrors.confirmPassword}
-                                        content={this.state.confirmPassword}
-                                        controlFunc={this.handleUserInput}
-                                    />
-                                    <br />
-                                    <div className="field">
-                                        <div className="fluid ui teal button" onClick={this.validatePassword}>
-                                            RESET PASSWORD
-                            </div>
-                                    </div>
-                                    <br />
-                                </div>
-                            </form>
-                            : <div>
-                                <h3> Your password has been successfully changed </h3>
+                        this.state.tokenValid == false ?
+                            <div>
+                                <h3> Looks like this reset password link is expired. Please go back to the main site to request another link.</h3>
                                 <h3> <a href="/Home"> Click here to be redirected back to the main site </a> </h3>
                                 <br />
                             </div>
+                            :
+                            !this.state.isResetSuccess ?
+                                <form className={`ui large form ${this.isLoadingChange()}`}>
+                                    <div>
+                                        <SingleInput
+                                            title="New Password"
+                                            inputType="password"
+                                            placeholder="New Password"
+                                            name="newPassword"
+                                            isError={this.errorClass(this.state.formErrors.newPassword)}
+                                            errorMessage={this.state.formErrors.newPassword}
+                                            content={this.state.newPassword}
+                                            controlFunc={this.handleUserInput}
+                                        />
+                                        <SingleInput
+                                            title="Confirm Password"
+                                            inputType="password"
+                                            placeholder="Confirm Password"
+                                            name="confirmPassword"
+                                            isError={this.errorClass(this.state.formErrors.confirmPassword)}
+                                            errorMessage={this.state.formErrors.confirmPassword}
+                                            content={this.state.confirmPassword}
+                                            controlFunc={this.handleUserInput}
+                                        />
+                                        <br />
+                                        <div className="field">
+                                            <div className="fluid ui teal button" onClick={this.validatePassword}>
+                                                RESET PASSWORD
+                            </div>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </form>
+                                : <div>
+                                    <h3> Your password has been successfully changed </h3>
+                                    <h3> <a href="/Home"> Click here to be redirected back to the main site </a> </h3>
+                                    <br />
+                                </div>
                 }
             </Container>
         )

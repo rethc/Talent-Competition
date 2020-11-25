@@ -16,7 +16,7 @@ export default class AuthenticatingBanner extends React.Component {
 
         this.state = {
             username: '',
-            userRole:'',
+            userRole: '',
             modalShow: false,
             modalLogin: true,
             url: window.location
@@ -60,7 +60,7 @@ export default class AuthenticatingBanner extends React.Component {
     isUserAuthenticated() {
         var cookies = Cookies.get('talentAuthToken')
         $.ajax({
-            url: 'http://localhost:60290/profile/profile/isUserAuthenticated',
+            url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/isUserAuthenticated',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ export default class AuthenticatingBanner extends React.Component {
                 if (res.isAuthenticated) {
                     this.setState({
                         username: res.username,
-                        userRole:res.type
+                        userRole: res.type
                     })
                     this.props.authenticationCallback(res.type)
                 }

@@ -119,14 +119,14 @@ export default class AccountSetting extends React.Component {
                                     </div>
                                     {
                                         this.props.passwordError != "" ?
-                                        < div className="ui error message">                                       
-                                        <p>{this.props.passwordError}</p>
+                                            < div className="ui error message">
+                                                <p>{this.props.passwordError}</p>
                                             </div> : null
                                     }
                                     <button className="ui teal button" type="button" onClick={(e) => this.props.save(e, "password")} >Save</button>
                                     <button className="ui button" type="button"
                                         onClick={() => this.changeState({ changePassword: false, password: { currentPassword: "", newPassword: "", confirmPassword: "" }, passwordError: "" })}>Cancel</button>
-                               </div>
+                                </div>
                         }
                     </div>
                 </div>
