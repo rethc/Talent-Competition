@@ -1,0 +1,9 @@
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\bin\Release\netcoreapp2.0\Talent.Common.deps.json
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\bin\Release\netcoreapp2.0\Talent.Common.dll
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\bin\Release\netcoreapp2.0\Talent.Common.pdb
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.csprojAssemblyReference.cache
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.AssemblyInfoInputs.cache
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.AssemblyInfo.cs
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.csproj.CoreCompileInputs.cache
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.dll
+C:\Users\chesd\Source\Repos\Internship2\Talent.Common\obj\Release\netcoreapp2.0\Talent.Common.pdb
