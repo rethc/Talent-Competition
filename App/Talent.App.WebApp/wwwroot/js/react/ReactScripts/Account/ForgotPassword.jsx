@@ -32,7 +32,7 @@ export default class ForgotPassword extends React.Component {
         var forgotPasswordModel = { email: this.state.email };
 
         $.ajax({
-            url: 'http://localhost:60998/authentication/authentication/forgetpassword',
+            url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/forgetpassword',
             type: 'POST',
             data: JSON.stringify(forgotPasswordModel),
             contentType: 'application/json',
@@ -84,7 +84,7 @@ export default class ForgotPassword extends React.Component {
                         </div>
                     </div>
                     : <div>
-                        A recovery link has been sent to your inbox. <br/>
+                        A recovery link has been sent to your inbox. <br />
                         Please use the link to recover your account. <br />
                         <br />
                     </div>

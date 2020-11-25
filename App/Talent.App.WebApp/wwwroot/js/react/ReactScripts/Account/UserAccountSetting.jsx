@@ -50,9 +50,9 @@ export default class UserAccountSetting extends React.Component {
     };
     save(e, field) {
         const cookies = Cookies.get('talentAuthToken');
-        if (field == "name") {            
+        if (field == "name") {
             $.ajax({
-                url: 'http://localhost:60998/authentication/authentication/changeUserName?userName=' + this.state.userName,
+                url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/changeUserName?userName=' + this.state.userName,
                 type: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + cookies,
@@ -74,7 +74,7 @@ export default class UserAccountSetting extends React.Component {
         if (field == "password") {
             let data = this.state.password;
             $.ajax({
-                url: 'http://localhost:60998/authentication/authentication/changePassword',
+                url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/changePassword',
                 type: "POST",
                 data: JSON.stringify(data),
                 headers: {
@@ -104,7 +104,7 @@ export default class UserAccountSetting extends React.Component {
         }
         if (field == "deactivate") {
             $.ajax({
-                url: 'http://localhost:60998/authentication/authentication/deactivateAccount',
+                url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/deactivateAccount',
                 type: "POST",
                 headers: {
                     'Authorization': 'Bearer ' + cookies,
@@ -116,7 +116,7 @@ export default class UserAccountSetting extends React.Component {
                         open: false
                     })
                 }.bind(this),
-                error: function (res) {                    
+                error: function (res) {
                     TalentUtil.notification.show("Error while deactivating your account", "error");
                 }
             });
@@ -125,7 +125,7 @@ export default class UserAccountSetting extends React.Component {
     getUserRole() {
         const cookies = Cookies.get('talentAuthToken');
         $.ajax({
-            url: 'http://localhost:60998/authentication/authentication/getAccountSettingInfo',
+            url: 'https://reth-talentidentity.azurewebsites.net/authentication/authentication/getAccountSettingInfo',
             type: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
@@ -234,7 +234,7 @@ export default class UserAccountSetting extends React.Component {
                                                             </h4>
                                                         </div>
                                                         <div className="ui four wide column">
-                                                            <button type="button" className="ui teal button" onClick={() => this.setState({open:true})}>Deactivate</button>
+                                                            <button type="button" className="ui teal button" onClick={() => this.setState({ open: true })}>Deactivate</button>
                                                         </div>
                                                         <Modal size="tiny" open={this.state.open} onClose={this.close} className="confirmation-modal">
                                                             <Modal.Header>Deactivate Your Account</Modal.Header>
@@ -244,7 +244,7 @@ export default class UserAccountSetting extends React.Component {
                                                                     Your account will be reactivated automatically once you sign in.</p>
                                                             </Modal.Content>
                                                             <Modal.Actions>
-                                                                <button className="ui teal button" onClick={(e)=>this.save(e,"deactivate")}>Deactivate</button>
+                                                                <button className="ui teal button" onClick={(e) => this.save(e, "deactivate")}>Deactivate</button>
                                                                 <button className="ui button" onClick={this.close}>Cancel</button>
                                                             </Modal.Actions>
                                                         </Modal>
