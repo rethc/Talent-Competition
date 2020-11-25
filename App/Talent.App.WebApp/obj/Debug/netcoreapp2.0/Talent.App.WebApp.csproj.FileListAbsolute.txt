@@ -39,10 +39,10 @@ C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\bin\Debug\netcorea
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\bin\Debug\netcoreapp2.0\Talent.App.WebApp.runtimeconfig.dev.json
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\bin\Debug\netcoreapp2.0\Talent.App.WebApp.dll
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\bin\Debug\netcoreapp2.0\Talent.App.WebApp.pdb
-C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.csprojAssemblyReference.cache
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.AssemblyInfoInputs.cache
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.AssemblyInfo.cs
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.csproj.CoreCompileInputs.cache
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.dll
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.pdb
 C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.genruntimeconfig.cache
+C:\Users\chesd\Source\Repos\Internship2\App\Talent.App.WebApp\obj\Debug\netcoreapp2.0\Talent.App.WebApp.csprojAssemblyReference.cache
