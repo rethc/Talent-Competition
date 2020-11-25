@@ -81,12 +81,15 @@ export default class ManageJob extends React.Component {
             },
             type: "GET",
             success: function (res) {
-                console.log("Jobs: ", res);
-                this.setState({ loadJobs: res.myJobs })
-            }.bind(this),
-            error: function (res) {
-                console.log(res.status);
-            }
+                this.setState({
+                    loadJobs: res.myJobs
+                });
+                if (res.totalCount > 0) {
+                    this.setState({ jobsFound: true });
+                } else {
+                    this.setState({ jobsFound: false });
+                }
+            }.bind(this)
         })
     }
 
