@@ -81,9 +81,9 @@ export default class TalentMatching extends React.Component {
     //        });
     //}
 
-    //loadJobs(data) { // url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getEmployerJobs',
+    //loadJobs(data) { // url: 'https://reth-talenttalent.azurewebsites.net/listing/listing/getEmployerJobs',
 
-    //loadSelectedJob(data) url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getJobForTalentMatching',
+    //loadSelectedJob(data) url: 'https://reth-talenttalent.azurewebsites.net/listing/listing/getJobForTalentMatching',
 
     //loadTalentList()  url: 'https://reth-talentprofile.azurewebsites.net/profile/profile/getTalentList',
 

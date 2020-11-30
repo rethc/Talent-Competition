@@ -17,7 +17,7 @@ export default class TalentWatchlist extends React.Component {
 
     }
 
-    //loadWatchlist()   url: 'http://https://reth-talenttalent.azurewebsites.net/listing/listing/getWatchlist',
+    //loadWatchlist()   url: 'https://reth-talenttalent.azurewebsites.net/listing/listing/getWatchlist',
 
     render() {
 
